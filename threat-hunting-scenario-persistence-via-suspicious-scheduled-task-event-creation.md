@@ -19,7 +19,7 @@
 |---------------------|------------------------------------------------------------------------------|
 | **Name**| DeviceFileEvents|
 | **Info**|https://learn.microsoft.com/en-us/defender-xdr/advanced-hunting-deviceinfo-table|
-| **Purpose**| Detect the download, file creation, movement, and deletion actions. |
+| **Purpose**| Detect the download, file creation, movement, and deletion actions of scheduled tasks. |
 
 | **Parameter**       | **Description**                                                              |
 |---------------------|------------------------------------------------------------------------------|
