@@ -40,7 +40,7 @@ DeviceFileEvents
 
 // Detect execution of the .bat file
 DeviceProcessEvents
-| where FileName endswith ".bat"
+| where FileName == "not-a-virus.bat"
 | order by Timestamp desc
 | project Timestamp, DeviceName, InitiatingProcessAccountName, FileName, ProcessCommandLine, SHA256
 
@@ -48,7 +48,7 @@ DeviceProcessEvents
 DeviceProcessEvents
 | where FileName == "schtasks.exe"
 | order by Timestamp desc
-| project Timestamp, DeviceName, InitiatingProcessAccountName, ProcessCommandLine, SHA256
+| project Timestamp, DeviceName, InitiatingProcessAccountName, FileName, ProcessCommandLine, SHA256
 
 // Detect deletion of the task file
 DeviceFileEvents
