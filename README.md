@@ -23,7 +23,7 @@ Management has noticed unusual file activity and the creation of scheduled tasks
 
 ### 1. Searched the `DeviceFileEvents` table to detect creation or modification of .bat files
 
-A “not-a-virus.bat” file was created at 2025-04-19T02:48:19.2837723Z on the endpoint “apoy-threat-hun” being created by user "apoy”. The file's presence in this location is unusual, and prompted further investigation. 
+A `not-a-virus.bat` file was created at 2025-04-19T02:48:19.2837723Z on the endpoint “apoy-threat-hun” being created by user "apoy”. The file's presence in this location is unusual, and prompted further investigation. 
 
 **Query used to locate events:**
 
@@ -43,7 +43,7 @@ DeviceFileEvents
 
 ### 2. Searched the `DeviceProcessEvents` table to detect execution of the .bat file
 
-Did not detect direct execution of the 'not-a-virus.bat' file on the endpoint. This suggests that the file may not have been run manually. The next logical step is to investigate the possibility that the file is being executed through alternative methods.
+Did not detect direct execution of the `not-a-virus.bat` file on the endpoint. This suggests that the file may not have been run manually. The next logical step is to investigate the possibility that the file is being executed through alternative methods.
 
 **Query used to locate event:**
 
@@ -57,6 +57,7 @@ DeviceProcessEvents
 
 
 ```
+![image](https://github.com/user-attachments/assets/c41ba666-8903-4047-b572-dddf23eba01a)
 
 ---
 
@@ -80,7 +81,7 @@ DeviceProcessEvents
 
 ### 4. Searched the `DeviceFileEvents` table to detect deletion of the .bat file
 
-The deletion of not-a-virus.bat was not detected, which may suggest it could be used again in the future.
+No deletion event for not-a-virus.bat was detected, suggesting it may remain available for future use or reactivation.
 Query used to locate events: 
 
 
@@ -94,6 +95,7 @@ DeviceFileEvents
 | project Timestamp, DeviceName, InitiatingProcessAccountName, ActionType, FileName, FolderPath, SHA256
 
 ```
+![image](https://github.com/user-attachments/assets/546a1ef9-33ee-4591-b08a-195fe7925c38)
 
 ---
 
