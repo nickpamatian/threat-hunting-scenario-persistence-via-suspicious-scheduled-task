@@ -50,7 +50,7 @@ DeviceProcessEvents
 | order by Timestamp desc
 | project Timestamp, DeviceName, InitiatingProcessAccountName, FileName, ProcessCommandLine, SHA256
 
-// Detect deletion of the task file
+// Detect deletion of the .bat file
 DeviceFileEvents
 | where FileName == "not-a-virus.bat" and ActionType == "FileDeleted"
 | order by Timestamp desc
